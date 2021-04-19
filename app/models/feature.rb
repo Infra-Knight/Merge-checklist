@@ -1,3 +1,3 @@
 class Feature < ApplicationRecord
-  has_one :checklist
+  has_many :checkitems
 end

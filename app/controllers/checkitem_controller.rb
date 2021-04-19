@@ -1,0 +1,2 @@
+class CheckitemController < ApplicationController
+end
