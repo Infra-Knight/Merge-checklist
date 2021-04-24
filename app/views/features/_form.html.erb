@@ -17,13 +17,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
     <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.select :status, ["To Do", "In Progress", "In Review", "Merged"] %>
   </div>
 
   <div class="field">
     <%= form.label :release_date %>
-    <%= form.text_field :release_date %>
+    <%= form.date_field :release_date %>
   </div>
 
   <div class="actions">

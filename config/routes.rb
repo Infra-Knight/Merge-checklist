@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'features/index'
-  get 'features/new'
-  get 'features/show'
-  get 'features/edit'
-  get 'features/_form'
   root 'features#index'
+
+  get '/features', to: 'features#index'
+  get '/features/new', to: 'features#new', as: 'new_feature'
+  get 'features/edit', as: 'edit_feature'
+  get '/features/:id', to: 'features#show', as: 'feature'
+
+  post '/features', to: 'features#create'
+
+  delete '/features/:id', to: 'features#destroy'
+ 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
