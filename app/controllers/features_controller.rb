@@ -21,6 +21,20 @@ class FeaturesController < ApplicationController
     end
   end
 
+  def edit
+    @feature = Feature.find(params[:id])
+  end
+
+  def update
+    @feature = Feature.find(params[:id])
+
+    if @feature.update(feature_params)
+      redirect_to @feature
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @feature = Feature.find(params[:id])
     @feature.destroy

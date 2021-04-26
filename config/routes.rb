@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
   get '/features', to: 'features#index'
   get '/features/new', to: 'features#new', as: 'new_feature'
-  get 'features/edit', as: 'edit_feature'
+  get '/features/edit/:id', to: 'features#edit', as: 'edit_feature'
   get '/features/:id', to: 'features#show', as: 'feature'
 
   post '/features', to: 'features#create'
+
+  patch '/features/:id', to: 'features#update'
 
   delete '/features/:id', to: 'features#destroy'
  
