@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>URL</th>
+      <th>Description</th>
       <th>Status</th>
       <th>Release date</th>
       <th colspan="4"></th>
@@ -17,7 +17,7 @@
     <% @features.each do |feature| %>
       <tr>
         <td><%= feature.name %></td>
-        <td><%= feature.url %></td>
+        <td><%= feature.description %></td>
         <td><%= feature.status %></td>
         <td><%= feature.release_date %></td>
         <td><%= link_to 'Show', feature %></td>
