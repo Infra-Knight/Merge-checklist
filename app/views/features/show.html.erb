@@ -20,5 +20,14 @@
   <%= @feature.release_date %>
 </p>
 
+<strong>Action Items</strong>
+<% @feature.checkitems.each_with_index do |checkitem, index| %>
+  <p>
+
+    <strong><%= index + 1 %></strong>
+    <%= checkitem.description %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
 <%= link_to 'Back', features_path %>

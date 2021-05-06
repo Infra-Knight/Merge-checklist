@@ -44,6 +44,6 @@ class FeaturesController < ApplicationController
 
   private
     def feature_params
-      params.require(:feature).permit(:name, :url, :status, :release_date)
+      params.require(:feature).permit(:name, :description, :status, :release_date)
     end
 end
