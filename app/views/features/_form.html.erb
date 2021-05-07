@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <strong><%= form.label :name %></strong>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <strong><%= form.label :description %></strong>
     <%= form.text_field :description %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
+    <strong><%= form.label :status %></strong>
     <%= form.select :status, ["To Do", "In Progress", "In Review", "Merged"] %>
   </div>
 
   <div class="field">
-    <%= form.label :release_date %>
+    <strong><%= form.label :release_date %></strong>
     <%= form.date_field :release_date %>
   </div>
 

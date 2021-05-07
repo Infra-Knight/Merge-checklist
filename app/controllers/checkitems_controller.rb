@@ -5,6 +5,13 @@ class CheckitemsController < ApplicationController
     redirect_to feature_path(@feature)
   end
 
+  def destroy
+    @feature = Feature.find(params[:feature_id])
+    @checkitem = @feature.checkitems.find(params[:id])
+    @checkitem.destroy
+    redirect_to feature_path(@feature)
+  end
+
   private
     def checkitem_params
       params.require(:checkitem).permit(:description)

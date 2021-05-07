@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/features/:feature_id/checkitems/:id', to: 'checkitems#show', as: 'checkitem'
   post '/features/:feature_id/checkitems', to: 'checkitems#create', as: 'feature_checkitems'
   patch '/features/:feature_id/checkitems/:id', to: 'checkitems#update'
-  delete '/features/:feature_id/checkitems/:id', to: 'checkitems#destroy'
+  delete '/features/:feature_id/checkitems/:id', to: 'checkitems#destroy', as: 'delete_checkitem'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

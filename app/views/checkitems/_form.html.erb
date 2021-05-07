@@ -1,0 +1,7 @@
+<%= form_with model: [ @feature, @feature.checkitems.build ] do |form| %>
+  <%= form.label :action_item_description %>
+  <%= form.text_field :description %>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
