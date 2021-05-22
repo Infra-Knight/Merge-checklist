@@ -1,37 +1,37 @@
-<%= form_with(model: feature) do |form| %>
-  <% if feature.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(feature.errors.count, "error") %> prohibited this feature from being saved:</h2>
-
-      <ul>
-        <% feature.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <strong><%= form.label :name %></strong>
+<%= form_with model: feature do |form| %>
+  <div>
+    <%= form.label :name %><br>
     <%= form.text_field :name %>
+    <% feature.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
-  <div class="field">
-    <strong><%= form.label :description %></strong>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <strong><%= form.label :status %></strong>
+  <div>
+    <%= form.label :stauts %><br>
     <%= form.select :status, ["To Do", "In Progress", "In Review", "Merged"] %>
+    <% feature.errors.full_messages_for(:status).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
-  <div class="field">
-    <strong><%= form.label :release_date %></strong>
+    <div>
+    <%= form.label :release_date %><br>
     <%= form.date_field :release_date %>
-  </div>
+    <% feature.errors.full_messages_for(:release_date).each do |message| %>
+      <div><%= message %></div  >
+    <% end %>
+    </div>
 
-  <div class="actions">
+      <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+    <% feature.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div  >
+    <% end %>
+      </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

@@ -3,7 +3,7 @@ class FeaturesController < ApplicationController
     @features = Feature.all
   end
 
-  def show
+   def show
     @feature = Feature.find(params[:id])
   end
 
@@ -44,6 +44,6 @@ class FeaturesController < ApplicationController
 
   private
     def feature_params
-      params.require(:feature).permit(:name, :description, :status, :release_date)
+      params.require(:feature).permit(:name, :status, :release_date, :description)
     end
 end

@@ -2,8 +2,10 @@
 
 one:
   description: MyString
-  checked: false
+  finished: false
+  feature: one
 
 two:
   description: MyString
-  checked: false
+  finished: false
+  feature: two

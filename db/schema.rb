@@ -10,29 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_023636) do
+ActiveRecord::Schema.define(version: 2021_05_22_105652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "checkitems", force: :cascade do |t|
+  create_table "check_items", force: :cascade do |t|
     t.string "description"
-    t.boolean "checked"
+    t.boolean "finished"
+    t.bigint "feature_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "feature_id", null: false
-    t.index ["feature_id"], name: "index_checkitems_on_feature_id"
+    t.index ["feature_id"], name: "index_check_items_on_feature_id"
   end
 
   create_table "features", force: :cascade do |t|
-    t.string "uuid"
     t.string "name"
     t.string "status"
     t.date "release_date"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "description"
   end
 
-  add_foreign_key "checkitems", "features"
+  add_foreign_key "check_items", "features"
 end

@@ -1,8 +1,11 @@
 class Feature < ApplicationRecord
-  has_many :checkitems
+  has_many :check_items, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 3 }
-  validates :description, presence: true
-  validates :status, presence: true
+  validates :status, presence: true, inclusion: {in: VALID_STATUSES}
   validates :release_date, presence: true
+  validates :description, presence: true
+
+  VALID_STATUSES = ['To Do', 'In Progress', 'In Review', 'Merged']
+
 end

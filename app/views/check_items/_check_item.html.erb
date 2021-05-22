@@ -1,0 +1,15 @@
+<p>
+  <strong>Description:</strong>
+  <%= check_item.description %>
+</p>
+
+<p>
+  <strong>Finished?</strong>
+  <%= check_item.finished %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Check Item', [check_item.feature, check_item],
+   method: :delete,
+   data: { confirm: "Are you sure?" } %>
+</p>
