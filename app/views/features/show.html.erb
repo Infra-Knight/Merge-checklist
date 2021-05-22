@@ -1,0 +1,20 @@
+<h1><%= @feature.name %></h1>
+
+<p><%= @feature.status %></p>
+
+<p><%= @feature.release_date %></p>
+
+<p><%= @feature.description %></p>
+
+<h2>Check items</h2>
+<%= render @feature.check_items %>
+
+<h2>Add a CheckItem:</h2>
+<%= render 'check_items/form' %>
+
+<ul>
+  <li><%= link_to "Edit", edit_feature_path(@feature) %></li>
+  <li><%= link_to "Destroy", feature_path(@feature),
+       method: :delete,
+       data: { confirm: "Are you sure?" } %></li>
+</ul>
