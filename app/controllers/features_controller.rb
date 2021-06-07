@@ -42,6 +42,19 @@ class FeaturesController < ApplicationController
     redirect_to root_path
   end
 
+  def status_width_for_progress_bar(feature)
+    possible_status = { "To Do" => "0", "In Progress" => "33", "In Review" => "66", "Merged" => "100" }
+    possible_status[feature.status]
+  end
+
+  def status_color_for_progress_bar(feature)
+    possible_status = { "To Do" => "", "In Progress" => "bg-info", "In Review" => "bg-primary", "Merged" => "bg-success" }
+    possible_status[feature.status]
+  end
+
+  helper_method :status_width_for_progress_bar
+  helper_method :status_color_for_progress_bar
+
   private
     def feature_params
       params.require(:feature).permit(:name, :status, :release_date, :description)
