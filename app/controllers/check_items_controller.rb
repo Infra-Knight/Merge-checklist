@@ -5,6 +5,22 @@ class CheckItemsController < ApplicationController
     redirect_to feature_path(@feature)
   end
 
+  def edit
+    @feature = Feature.find(params[:feature_id])
+    @check_item = @feature.check_items.find(params[:id])
+  end
+
+  def update
+    @feature = Feature.find(params[:feature_id])
+    @check_item = @feature.check_items.find(params[:id])
+
+    if @check_item.update(check_item_params)
+      redirect_to @feature
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @feature = Feature.find(params[:feature_id])
     @check_item = @feature.check_items.find(params[:id])
