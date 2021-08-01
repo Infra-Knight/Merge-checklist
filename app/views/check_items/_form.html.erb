@@ -1,13 +1,13 @@
-<%= form_with model: [ @feature, @feature.check_items.build ] do |form| %>
-  <p>
+<%= form_with model: [ @feature, @check_item ? @check_item : @feature.check_items.build ] do |form| %>
+  <div>
     <%= form.label :description %><br>
     <%= form.text_field :description %>
-  </p>
-  <p>
+  </div>
+  <div>
     <%= form.label :finished? %><br>
     <%= form.check_box :finished %>
-  </p>
-  <p>
+  </div>
+  <div>
     <%= form.submit %>
-  </p>
+  </div>
 <% end %>

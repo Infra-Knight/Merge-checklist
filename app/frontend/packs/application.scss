@@ -1,5 +1,49 @@
-h1 {
-  text-decoration: underline;
+.layout{
+  z-index: 1;
+}
+
+.a-primary{
+  color: black;
+  text-decoration: unset;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.flex-container-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-container-flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cut-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-basis: 200px;
+  flex-shrink: 1;
+}
+
+.progress-flex {
+  flex-shrink: 1;
+  min-width: 20%;
+}
+
+.div-fill-flexbox {
+  flex: 1;
+  padding-right: 5%;
+}
+
+.delete-feature-button {
+  display: flex;
+  flex-shrink: 1;
+  justify-content: flex-end;
 }
 
 // Import Bootstrap v5

@@ -1,3 +1,11 @@
 <h1>Edit Feature</h1>
 
 <%= render "form", feature: @feature %>
+
+<h2>Check items</h2>
+<%= render @feature.check_items %>
+
+<h2>Add a CheckItem:</h2>
+<%= render 'check_items/form' %>
+
+<%= link_to 'Back', @feature %>

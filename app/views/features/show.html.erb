@@ -1,20 +1,27 @@
-<h1><%= @feature.name %></h1>
+<div>
+  <h2><%= @feature.name %></h2>
+  <div class="flex-container-flex-start">
+    <div style="word-wrap: break-word"><h5>Status: </h5></div>
+    <div><%= @feature.status %></div>
+  </div>
+  <div class="flex-container-flex-start">
+    <div style="word-wrap: break-word"><h5>Release date: </h5></div>
+    <div><%= @feature.release_date %></div>
+  </div>
+  <div class="flex-container-flex-start">
+    <div style="word-wrap: break-word"><h5>Description: </h5></div>
+    <div><%= @feature.description %></div>
+  </div>
 
-<p><%= @feature.status %></p>
+  <h2>Check items</h2>
+  <%= render partial: "check_items/show_item", collection: @feature.check_items, as: :check_item %>
 
-<p><%= @feature.release_date %></p>
+  <ul>
+    <li><%= link_to "Edit", edit_feature_path(@feature) %></li>
+    <li><%= link_to "Destroy", feature_path(@feature),
+         method: :delete,
+         data: { confirm: "Are you sure?" } %></li>
+  </ul>
 
-<p><%= @feature.description %></p>
-
-<h2>Check items</h2>
-<%= render @feature.check_items %>
-
-<h2>Add a CheckItem:</h2>
-<%= render 'check_items/form' %>
-
-<ul>
-  <li><%= link_to "Edit", edit_feature_path(@feature) %></li>
-  <li><%= link_to "Destroy", feature_path(@feature),
-       method: :delete,
-       data: { confirm: "Are you sure?" } %></li>
-</ul>
+  <%= link_to 'Back', features_path %>
+</div>
