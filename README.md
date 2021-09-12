@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Usage
 
-Things you may want to cover:
+To use console:
 
-* Ruby version
+`rails console`
 
-* System dependencies
+To start api:
 
-* Configuration
+`rails server -p 3000`
 
-* Database creation
+To start webpack dev server: 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`./bin/webpack-dev-server`

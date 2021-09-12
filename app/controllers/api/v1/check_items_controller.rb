@@ -5,6 +5,12 @@ module Api
     class CheckItemsController < ApplicationController
       protect_from_forgery with: :null_session
 
+      def index
+        feature = Feature.find(params[:feature_id])
+        # check_items = feature.check_items.find(params[:id])
+        render json: CheckItemSerializer.new(feature.check_items).serialized_json
+      end
+
       def create
         feature = Feature.find(params[:feature_id])
         check_item = feature.check_items.create(check_item_params)
